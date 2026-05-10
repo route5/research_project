@@ -76,6 +76,7 @@ buffer = []
 # ==============================
 
 def init_agent(model_path=MODEL_PATH, seed=None):
+    print("init start")
     global buffer
 
     buffer = []
@@ -83,11 +84,13 @@ def init_agent(model_path=MODEL_PATH, seed=None):
     if seed is not None:
         np.random.seed(seed)
         torch.manual_seed(seed)
+        print("torch imported")
 
     if os.path.exists(model_path):
         try:
             load_model(model_path)
             print(f"[PPO] loaded from {model_path}")
+            print("model loaded")
         except Exception as e:
             print(f"[PPO] load failed: {e}")
     else:
