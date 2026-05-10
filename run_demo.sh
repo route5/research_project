@@ -9,7 +9,7 @@ export JAVA_OPTS="
 "
 
 NETLOGO_HOME="/home/m-saito/NetLogo6.3.0"
-MODEL_PATH="$BASE_DIR/netlogo/HrSharing_test_pyextention.nlogo"
+MODEL_PATH="$BASE_DIR/netlogo/HrSharing_test_pyextention-20260505.nlogo"
 OUTPUT_PATH="$BASE_DIR/results/results.csv"
 
 mkdir -p "$BASE_DIR/results"
