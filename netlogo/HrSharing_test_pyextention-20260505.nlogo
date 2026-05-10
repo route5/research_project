@@ -111,7 +111,11 @@ to setup
 
   ;if not py-initialized? [
 
-  py:setup "/home/b17z6ms/src/venv-pynetlogo/bin/python"
+  ;py:setup "/home/b17z6ms/src/venv-pynetlogo/bin/python"
+  py:setup "/home/m-saito/rl_env/bin/python"
+  py:run "import sys"
+  py:run "sys.path.append('/home/m-saito/research_project/python_rl')"
+  
   ;py:run "print('python ready')"
   ;py:run "from pyextention_policy import policy_step"
   py:run "import rl_agent"
