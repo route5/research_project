@@ -101,6 +101,9 @@ def init_agent(model_path=MODEL_PATH, seed=None):
 # ==============================
 
 def policy_step(obs):
+    print("policy_step start")
+    print(obs)
+    print(type(obs))
 
     obs = np.asarray(obs, dtype=np.float32)
     obs_t = torch.tensor(obs).unsqueeze(0)
