@@ -209,7 +209,7 @@ def train():
 # 保存・読み込み
 # ==============================
 
-def save_model(path="ppo_netlogo.pt"):
+def save_model(path=MODEL_PATH):
 
     torch.save({
         "policy": policy.state_dict(),
@@ -219,7 +219,7 @@ def save_model(path="ppo_netlogo.pt"):
     print(f"[PPO] saved to {path}")
 
 
-def load_model(path="ppo_netlogo.pt"):
+def load_model(path=MODEL_PATH):
     try:
         data = torch.load(path, weights_only=True)
     except TypeError:
