@@ -15,6 +15,7 @@ OUTPUT_PATH="$BASE_DIR/results/results.csv"
 mkdir -p "$BASE_DIR/results"
 
 "$NETLOGO_HOME/netlogo-headless.sh" \
+  --threads 1 \
   --model "$MODEL_PATH" \
   --experiment "experiment202602_Z" \
   --table "$OUTPUT_PATH"
