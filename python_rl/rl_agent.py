@@ -107,6 +107,7 @@ def policy_step(obs):
 
     obs = np.asarray(obs, dtype=np.float32)
     obs_t = torch.tensor(obs).unsqueeze(0)
+    
 
     with torch.no_grad():
         probs = policy(obs_t)
