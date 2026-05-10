@@ -114,6 +114,9 @@ def policy_step(obs):
         dist = Categorical(probs)
         action = dist.sample()
 
+
+    
+    print("before return")
     return int(action.item())
 
 
