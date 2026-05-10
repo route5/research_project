@@ -118,7 +118,7 @@ to setup
 
   ;py:run "print('python ready')"
   ;py:run "from pyextention_policy import policy_step"
-  py:run "import rl_agent"
+  ;py:run "import rl_agent"
   py:run "from python_rl import rl_agent"
   ;print "[NL] setup finished"
   py:run "rl_agent.init_agent()"
