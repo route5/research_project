@@ -20,6 +20,8 @@ LR = 3e-4
 BATCH_SIZE = 1024
 EPOCHS = 10
 
+MODEL_PATH = "../models/model.pt"
+
 # ==============================
 # ネットワーク
 # ==============================
@@ -73,7 +75,7 @@ buffer = []
 # 初期化（NetLogoから呼ぶ）
 # ==============================
 
-def init_agent(model_path="model.pt", seed=None):
+def init_agent(model_path=MODEL_PATH, seed=None):
     global buffer
 
     buffer = []

@@ -304,7 +304,7 @@ if not empty? RL-who-list [
     py:set "done" done
 
     py:run "rl_agent.store_transition(obs, action, reward, next_obs, done)"
-    py:run "rl_agent.save_model('model.pt')"
+    py:run "rl_agent.save_model('../models/model.pt')"
     
 
     file-open "rl_debug.log"
