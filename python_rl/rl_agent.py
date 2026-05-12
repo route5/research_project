@@ -101,9 +101,19 @@ def init_agent(model_path=MODEL_PATH, seed=None):
 # ==============================
 
 def policy_step(obs):
+<<<<<<< HEAD
     print("policy_step start", flush=True)
     print(obs, flush=True)
     print(type(obs), flush=True)
+=======
+    return 1
+
+
+def policy_step_original(obs):
+    # print("policy_step start")
+    # print(obs)
+    # print(type(obs))
+>>>>>>> 6480b88fbc08bca5520c81d1534408926b991b9a
 
     obs = np.asarray(obs, dtype=np.float32)
     obs_t = torch.tensor(obs).unsqueeze(0)
@@ -114,8 +124,14 @@ def policy_step(obs):
         dist = Categorical(probs)
         action = dist.sample()
 
+<<<<<<< HEAD
     print(f"[py]Selected action: {action.item()}", flush=True)
 
+=======
+
+    
+    # print("before return")
+>>>>>>> 6480b88fbc08bca5520c81d1534408926b991b9a
     return int(action.item())
 
 
