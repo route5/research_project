@@ -235,6 +235,7 @@ to apply-action [c action]
   ]
 end
 
+
 to go
   ;ask companies [print (word "who=" who " αt=" αt " βt=" βt " status=" status)]
 
@@ -330,6 +331,8 @@ result-func
 set day (day + 1)
 
 ;; ---- 時間更新 ----
+
+show ticks
 tick
 end
 
