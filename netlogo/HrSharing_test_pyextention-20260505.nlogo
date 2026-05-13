@@ -282,11 +282,11 @@ if not empty? RL-who-list [
     show (word "before βt=" [βt] of c)
     apply-action c action
     ask c [　set θt rl-θt　]
-    show (word "after βt=" [βt] of c)
-    show (word "reward=" last-reward)
 
     ;; ===== 環境更新 =====
     scenario-func-fix c
+    show (word "after βt=" [βt] of c)
+    show (word "reward=" last-reward)
 
     ;; ===== 報酬 r_t =====
     set last-reward calc-reward c

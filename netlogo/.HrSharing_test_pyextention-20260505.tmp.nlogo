@@ -282,7 +282,6 @@ if not empty? RL-who-list [
     show (word "before βt=" [βt] of c)
     apply-action c action
     ask c [　set θt rl-θt　]
-    show (word "after βt=" [βt] of c)
 
 
     ;; ===== 環境更新 =====
