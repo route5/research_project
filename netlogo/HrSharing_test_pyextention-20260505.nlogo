@@ -78,6 +78,7 @@ to-report get_obs [c]
     [point-of-Sharing] of c
     [annual-α] of c
     [n] of c
+    [rl-θt] of c
     item 0 s
     item 1 s
     item 2 s
