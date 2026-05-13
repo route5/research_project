@@ -277,6 +277,7 @@ if not empty? RL-who-list [
     ;; ② 行動
     let action py:runresult "rl_agent.policy_step(obs)"
     ;; ③ 行動適用
+
     apply-action c action
 
     ;; ===== 環境更新 =====
@@ -336,7 +337,12 @@ if ticks mod 10 = 0 [ show ticks ]
 tick
 
 ;; ---- 終了判定 ----
-
+if ticks >= 240 [
+    print "NETLOGO SAVE START"
+    py:run "rl_agent.save_model('/home/m-saito/research_project/models/model.pt')"
+    print "NETLOGO SAVE END"
+    stop
+  ]
 
 
 end
