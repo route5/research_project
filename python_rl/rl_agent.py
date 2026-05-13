@@ -9,7 +9,7 @@ from torch.distributions import Categorical
 # 設定
 # ==============================
 
-OBS_DIM = 10     # 観測次元（要調整）
+OBS_DIM = 11     # 観測次元（要調整）
 ACT_DIM = 5        # 行動数（要調整）
 
 GAMMA = 0.99
