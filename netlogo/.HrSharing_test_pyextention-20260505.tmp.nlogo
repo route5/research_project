@@ -241,11 +241,7 @@ to go
 
     ;; ---- 終了判定 ----
   if ticks >= 240 [
-    print "NETLOGO SAVE START"
-    py:run "rl_agent.save_model('/home/m-saito/research_project/models/model.pt')"
-    print "NETLOGO SAVE END"
-    stop
-  ]
+ stop ]
 
   ;; ---- 日更新 ----
   if day > 5 [set day 1
