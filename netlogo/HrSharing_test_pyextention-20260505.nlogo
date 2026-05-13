@@ -239,13 +239,7 @@ end
 to go
   ;ask companies [print (word "who=" who " αt=" αt " βt=" βt " status=" status)]
 
-    ;; ---- 終了判定 ----
-  if ticks >= 240 [
-    print "NETLOGO SAVE START"
-    py:run "rl_agent.save_model('/home/m-saito/research_project/models/model.pt')"
-    print "NETLOGO SAVE END"
-    stop
-  ]
+
 
   ;; ---- 日更新 ----
   if day > 5 [set day 1
@@ -340,6 +334,14 @@ set day (day + 1)
 
 if ticks mod 10 = 0 [ show ticks ]
 tick
+
+;; ---- 終了判定 ----
+if ticks >= 240 [
+    print "NETLOGO SAVE START"
+    py:run "rl_agent.save_model('/home/m-saito/research_project/models/model.pt')"
+    print "NETLOGO SAVE END"
+    stop
+ ]
 end
 
 
@@ -3016,7 +3018,6 @@ NetLogo 6.3.0
   <experiment name="experiment202602_Z" repetitions="1" runMetricsEveryStep="false">
     <setup>setup</setup>
     <go>go</go>
-    <exitCondition>ticks &gt;= 240</exitCondition>
     <metric>ticks</metric>
     <metric>int sum [result] of companies</metric>
     <metric>int sum [Total-β] of companies</metric>
