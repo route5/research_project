@@ -101,7 +101,7 @@ to setup
   ;set RL-who 1  ;; 学習対象 company の who を指定（例: 1）
   ;set RL-who-list map [ read-from-string ? ] (sentence RL-who-list-str)
   ;set RL-who-list map [ x -> read-from-string x ] (sentence RL-who-list-str)
-  
+
   ;; 空文字なら空リスト
   ifelse RL-who-list-str = "" [ set RL-who-list []][
     set RL-who-list read-from-string (word "[" RL-who-list-str "]")]
@@ -306,7 +306,7 @@ if not empty? RL-who-list [
 
     py:run "rl_agent.store_transition(obs, action, reward, next_obs, done)"
     py:run "rl_agent.save_model('../models/model.pt')"
-    
+
 
     file-open "rl_debug.log"
 
@@ -332,7 +332,7 @@ set day (day + 1)
 
 ;; ---- 時間更新 ----
 
-show ticks
+if ticks mod 10 = 0 [ show ticks ]
 tick
 end
 
