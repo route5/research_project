@@ -91,7 +91,6 @@ def init_agent(model_path=MODEL_PATH, seed=None):
         try:
             load_model(model_path)
             print(f"[PPO] loaded from {model_path}")
-            print("model loaded")
         except Exception as e:
             print(f"[PPO] load failed: {e}")
     else:
@@ -102,10 +101,6 @@ def init_agent(model_path=MODEL_PATH, seed=None):
 # ==============================
 
 def policy_step(obs):
-    return 1
-
-
-def policy_step_original(obs):
     # print("policy_step start")
     # print(obs)
     # print(type(obs))
@@ -246,5 +241,3 @@ def load_model(path=MODEL_PATH):
 
     policy.load_state_dict(data["policy"])
     value_net.load_state_dict(data["value"])
-
-    print(f"[PPO] loaded from {path}")
