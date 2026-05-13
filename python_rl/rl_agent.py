@@ -225,6 +225,8 @@ def train():
 # ==============================
 
 def save_model(path=MODEL_PATH):
+    print("SAVE MODEL START")
+    print(path)
 
     torch.save({
         "policy": policy.state_dict(),
@@ -232,6 +234,7 @@ def save_model(path=MODEL_PATH):
     }, path)
 
     print(f"[PPO] saved to {path}")
+    print("SAVE MODEL DONE")
 
 
 def load_model(path=MODEL_PATH):
