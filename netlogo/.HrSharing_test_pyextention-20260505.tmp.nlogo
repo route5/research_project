@@ -78,7 +78,7 @@ to-report get_obs [c]
     [point-of-Sharing] of c
     [annual-α] of c
     [n] of c
-
+    [rl-θt] of c
     item 0 s
     item 1 s
     item 2 s
@@ -278,7 +278,7 @@ if not empty? RL-who-list [
     ;; ② 行動
     let action py:runresult "rl_agent.policy_step(obs)"
     ;; ③ 行動適用
-    show (word "before βt=" [βt] of c)
+
     apply-action c action
     show (word "after βt=" [βt] of c)
 

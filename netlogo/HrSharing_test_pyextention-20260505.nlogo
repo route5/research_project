@@ -278,9 +278,9 @@ if not empty? RL-who-list [
     ;; ② 行動
     let action py:runresult "rl_agent.policy_step(obs)"
     ;; ③ 行動適用
-    show (word "before βt=" [βt] of c)
+    show (word "before rl-θt=" [rl-θt] of c)
     apply-action c action
-    show (word "after βt=" [βt] of c)
+    show (word "after rl-θt=" [rl-θt] of c)
 
     ;; ===== 環境更新 =====
     scenario-func-fix c
