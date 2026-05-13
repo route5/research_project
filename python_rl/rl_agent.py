@@ -20,7 +20,8 @@ LR = 3e-4
 BATCH_SIZE = 1024
 EPOCHS = 10
 
-MODEL_PATH = "../models/model.pt"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "model.pt")
 
 # ==============================
 # ネットワーク
