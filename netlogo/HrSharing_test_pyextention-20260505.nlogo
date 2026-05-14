@@ -284,10 +284,10 @@ if not empty? RL-who-list [
 
     ;; ② 行動
     ;let action py:runresult "rl_agent.policy_step(obs)"
-    let py-result py:runresult "rl_agent.policy_step(obs)"
+    let policy-step-output py:runresult "rl_agent.policy_step(obs)"
 
-    let action item 0 py-result
-    let action_idx item 1 py-result
+    let action item 0 policy-step-output 
+    let action_idx item 1 policy-step-output 
 
     ;; ③ 行動適用
     show (word "before βt=" [βt] of c)
