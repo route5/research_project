@@ -146,6 +146,8 @@ def store_transition(obs, action, reward, next_obs, done):
         log_prob.item()
     ))
 
+    print(len(buffer))
+
     if len(buffer) >= BATCH_SIZE:
         train()
         buffer.clear()
