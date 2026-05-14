@@ -17,4 +17,6 @@ OUTPUT_PATH="$BASE_DIR/results/results.csv"
 "$NETLOGO_HOME/netlogo-headless.sh" \
   --model "$MODEL_PATH" \
   --experiment "experiment202602_Z_1" \
+  --threads 1 \
   --table "$OUTPUT_PATH"
+
