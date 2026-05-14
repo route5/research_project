@@ -709,7 +709,7 @@ INPUTBOX
 100
 460
 my-seed
-0.0
+1.0
 1
 0
 Number
@@ -722,7 +722,7 @@ CHOOSER
 variability
 variability
 1 1.25 1.5 1.75 2
-2
+0
 
 SLIDER
 15
@@ -774,7 +774,7 @@ CHOOSER
 scenario
 scenario
 0 1 2
-2
+0
 
 MONITOR
 10
@@ -1142,7 +1142,7 @@ CHOOSER
 distributionScenario
 distributionScenario
 0 1 2 3
-1
+0
 
 TEXTBOX
 1195
