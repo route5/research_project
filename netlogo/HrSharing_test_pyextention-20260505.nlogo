@@ -120,9 +120,15 @@ to setup
   ;py:run "print('python ready')"
   ;py:run "from pyextention_policy import policy_step"
   ;py:run "import rl_agent"
-  py:run "from python_rl import rl_agent"
-  ;print "[NL] setup finished"
+  py:run "from importlib import reload"
+  py:run "import python_rl.rl_agent as rl_agent"
+  py:run "reload(rl_agent)"
   py:run "rl_agent.init_agent()"
+
+
+  ;py:run "from python_rl import rl_agent"
+  ;print "[NL] setup finished"
+  ;py:run "rl_agent.init_agent()"
 
   ;  set py-initialized? true
   ;]
@@ -268,7 +274,7 @@ if not empty? RL-who-list [
 
     let c one-of candidates
 
-    show (word "[RL] Chosen company: " [who] of c)
+    ;;show (word "[RL] Chosen company: " [who] of c)
     ;; ① 状態
     let obs get_obs c
 
@@ -285,8 +291,8 @@ if not empty? RL-who-list [
 
     ;; ===== 環境更新 =====
     scenario-func-fix c
-    show (word "after βt=" [βt] of c)
-    show (word "reward=" last-reward)
+    ;;show (word "after βt=" [βt] of c)
+    ;;show (word "reward=" last-reward)
 
     ;; ===== 報酬 r_t =====
     set last-reward calc-reward c
@@ -298,9 +304,8 @@ if not empty? RL-who-list [
     ;; ===== 終了判定 =====
     let done (ticks + 1 >= 240)
 
-    print (word
-      "tick=" ticks
-    )
+    ;;print (word  "tick=" ticks)
+    if ticks mod 50 = 0 [ show ticks]
 
     ;; ===== Pythonへ送信 =====
     py:set "obs" obs

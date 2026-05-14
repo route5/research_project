@@ -120,7 +120,7 @@ def policy_step(obs):
 # ==============================
 
 def store_transition(obs, action, reward, next_obs, done):
-    print(f"[py]Store_transition: obs={obs}, action={action}, reward={reward}, next_obs={next_obs}, done={done}")
+    #print(f"[py]Store_transition: obs={obs}, action={action}, reward={reward}, next_obs={next_obs}, done={done}")
 
     global buffer
 
@@ -146,24 +146,25 @@ def store_transition(obs, action, reward, next_obs, done):
         log_prob.item()
     ))
 
-    print(len(buffer))
+    #print(len(buffer))
 
     if len(buffer) >= BATCH_SIZE:
-        train()
-        buffer.clear()
+        pass
+    #    train()
+    #    buffer.clear()
 
 
 # ==============================
 # PPO学習
 # ==============================
 
-def train():
+def train2():
     print("TRAINING PPO SKIPPED")
     return
 
 
-def train2():
-    print("TRAINING PPO")
+def train():
+    #print("TRAINING PPO")
     if len(buffer) >= BATCH_SIZE:
         pass
 
@@ -225,7 +226,7 @@ def train2():
 
 def save_model(path=MODEL_PATH):
     print("SAVE MODEL START")
-    print(path)
+    #print(path)
 
     torch.save({
         "policy": policy.state_dict(),
@@ -233,7 +234,7 @@ def save_model(path=MODEL_PATH):
     }, path)
 
     print(f"[PPO] saved to {path}")
-    print("SAVE MODEL DONE")
+    #print("SAVE MODEL DONE")
 
 
 def load_model(path=MODEL_PATH):
