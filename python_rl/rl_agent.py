@@ -79,7 +79,7 @@ buffer = []
 # ==============================
 
 def init_agent(model_path=MODEL_PATH, seed=None):
-    print("init start")
+    #print("init start")
     global buffer
 
     buffer = []
@@ -87,12 +87,12 @@ def init_agent(model_path=MODEL_PATH, seed=None):
     if seed is not None:
         np.random.seed(seed)
         torch.manual_seed(seed)
-        print("torch imported")
+        #print("torch imported")
 
     if os.path.exists(model_path):
         try:
             load_model(model_path)
-            print(f"[PPO] loaded from {model_path}")
+            #print(f"[PPO] loaded from {model_path}")
         except Exception as e:
             print(f"[PPO] load failed: {e}")
     else:
@@ -162,11 +162,11 @@ def store_transition(obs, action, reward, next_obs, done):
 # PPO学習
 # ==============================
 def train():
-    print("TRAIN START", flush=True)
+    #print("TRAIN START", flush=True)
 
     try:
 
-        print(f"buffer size={len(buffer)}", flush=True)
+        #print(f"buffer size={len(buffer)}", flush=True)
 
         # PPO training code
 
@@ -174,7 +174,7 @@ def train():
 
     except Exception as e:
         print("TRAIN ERROR", flush=True)
-        print(e, flush=True)
+        #print(e, flush=True)
 
         import traceback
         traceback.print_exc()
@@ -247,7 +247,7 @@ def train1():
         loss.backward()
         optimizer.step()
 
-    print("[PPO] training step complete")
+    #print("[PPO] training step complete")
 
 
 # ==============================
@@ -263,7 +263,7 @@ def save_model(path=MODEL_PATH):
         "value": value_net.state_dict()
     }, path)
 
-    print(f"[PPO] saved to {path}")
+    #print(f"[PPO] saved to {path}")
     #print("SAVE MODEL DONE")
 
 
