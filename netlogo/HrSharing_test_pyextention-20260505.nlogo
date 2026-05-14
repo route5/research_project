@@ -283,7 +283,11 @@ if not empty? RL-who-list [
     py:set "who" [who] of c
 
     ;; ② 行動
-    let action py:runresult "rl_agent.policy_step(obs)"
+    ;let action py:runresult "rl_agent.policy_step(obs)"
+    let result py:runresult "rl_agent.policy_step(obs)"
+
+    let action item 0 result
+    let action_idx item 1 result
 
     ;; ③ 行動適用
     show (word "before βt=" [βt] of c)
@@ -310,7 +314,7 @@ if not empty? RL-who-list [
 
     ;; ===== Pythonへ送信 =====
     py:set "obs" obs
-    py:set "action" action
+    py:set "action" action_idx ;action
     py:set "reward" last-reward
     py:set "next_obs" next_obs
     py:set "done" done

@@ -23,7 +23,7 @@ EPOCHS = 10
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_PATH = os.path.join(BASE_DIR, "models", "model.pt")
 
-ACTIONS = [-2, -1, 0, 1, 2]
+ACTION_MAP = [-2, -1, 0, 1, 2]
 
 # ==============================
 # ネットワーク
@@ -110,9 +110,13 @@ def policy_step(obs):
     with torch.no_grad():
         probs = policy(obs_t)
         dist = Categorical(probs)
-        action = dist.sample()
+        #action = dist.sample()
 
-    return ACTIONS[action.item()]
+        action_idx = dist.sample().item()
+
+    env_action = ACTION_MAP[action_idx]
+
+    return [env_action, action_idx]
 
 
 # ==============================
