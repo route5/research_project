@@ -158,7 +158,14 @@ def store_transition(obs, action, reward, next_obs, done):
 # ==============================
 
 def train():
+    print("TRAINING PPO SKIPPED")
+    return
+
+
+def train2():
     print("TRAINING PPO")
+    if len(buffer) >= BATCH_SIZE:
+        pass
 
     obs, actions, rewards, next_obs, dones, values, log_probs = zip(*buffer)
 

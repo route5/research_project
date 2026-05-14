@@ -345,6 +345,7 @@ tick
 if ticks >= 240 [
     print "NETLOGO SAVE START"
     ;py:run "rl_agent.save_model('/home/m-saito/research_project/models/model.pt')"
+    py:run (word "rl_agent.save_model('/home/m-saito/research_project/models/model_" behaviorspace-run-number ".pt')")
     print "NETLOGO SAVE END"
     stop
   ]
