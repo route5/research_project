@@ -311,7 +311,7 @@ if not empty? RL-who-list [
 
     py:run "rl_agent.store_transition(obs, action, reward, next_obs, done)"
     ;py:run "rl_agent.save_model('../models/model.pt')"
-    py:run "rl_agent.save_model()"
+    ;py:run "rl_agent.save_model()"
 
 
     file-open "rl_debug.log"
@@ -344,7 +344,8 @@ tick
 ;; ---- 終了判定 ----
 if ticks >= 240 [
     print "NETLOGO SAVE START"
-    py:run "rl_agent.save_model('/home/m-saito/research_project/models/model.pt')"
+    ;py:run "rl_agent.save_model('/home/m-saito/research_project/models/model.pt')"
+    py:run (word "rl_agent.save_model('/home/m-saito/research_project/models/model_" behaviorspace-run-number ".pt')")
     print "NETLOGO SAVE END"
     stop
   ]

@@ -311,7 +311,7 @@ if not empty? RL-who-list [
 
     py:run "rl_agent.store_transition(obs, action, reward, next_obs, done)"
     ;py:run "rl_agent.save_model('../models/model.pt')"
-    py:run "rl_agent.save_model()"
+    ;py:run "rl_agent.save_model()"
 
 
     file-open "rl_debug.log"
@@ -344,7 +344,7 @@ tick
 ;; ---- 終了判定 ----
 if ticks >= 240 [
     print "NETLOGO SAVE START"
-    py:run "rl_agent.save_model('/home/m-saito/research_project/models/model.pt')"
+    ;py:run "rl_agent.save_model('/home/m-saito/research_project/models/model.pt')"
     print "NETLOGO SAVE END"
     stop
   ]
@@ -3047,6 +3047,35 @@ NetLogo 6.3.0
     <enumeratedValueSet variable="my-seed">
       <value value="22"/>
     </enumeratedValueSet>
+    <enumeratedValueSet variable="max-daily-overtime-minute">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="number-of-negotiations">
+      <value value="3"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="experiment202602_Z" repetitions="1" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <metric>ticks</metric>
+    <metric>int sum [result] of companies</metric>
+    <metric>int sum [Total-β] of companies</metric>
+    <metric>int sum [Total-θ] of companies</metric>
+    <metric>int sum [Total-duty] of companies</metric>
+    <metric>int sum [Total-workload] of companies</metric>
+    <metric>int sum [result2] of companies</metric>
+    <metric>int sum [Total-θt-plus] of companies</metric>
+    <metric>int sum [Total-θt-minus] of companies</metric>
+    <enumeratedValueSet variable="variability">
+      <value value="1.5"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="scenario">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="distributionScenario">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <steppedValueSet variable="my-seed" first="0" step="1" last="99"/>
     <enumeratedValueSet variable="max-daily-overtime-minute">
       <value value="30"/>
     </enumeratedValueSet>
