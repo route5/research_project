@@ -3044,7 +3044,9 @@ NetLogo 6.3.0
     <enumeratedValueSet variable="distributionScenario">
       <value value="0"/>
     </enumeratedValueSet>
-    <steppedValueSet variable="my-seed" first="0" step="1" last="99"/>
+    <enumeratedValueSet variable="my-seed">
+      <value value="22"/>
+    </enumeratedValueSet>
     <enumeratedValueSet variable="max-daily-overtime-minute">
       <value value="30"/>
     </enumeratedValueSet>
