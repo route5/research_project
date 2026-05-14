@@ -3023,7 +3023,7 @@ NetLogo 6.3.0
       <value value="3"/>
     </enumeratedValueSet>
   </experiment>
-  <experiment name="experiment202602_Z" repetitions="1" runMetricsEveryStep="false">
+  <experiment name="experiment202602_Z_1" repetitions="1" runMetricsEveryStep="false">
     <setup>setup</setup>
     <go>go</go>
     <metric>ticks</metric>
