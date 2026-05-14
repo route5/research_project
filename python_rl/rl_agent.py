@@ -157,13 +157,39 @@ def store_transition(obs, action, reward, next_obs, done):
 # ==============================
 # PPO学習
 # ==============================
+def train():
+    print("TRAIN START", flush=True)
+
+    try:
+
+        print(f"buffer size={len(buffer)}", flush=True)
+
+        # PPO training code
+
+        print("TRAIN END", flush=True)
+
+    except Exception as e:
+        print("TRAIN ERROR", flush=True)
+        print(e, flush=True)
+
+        import traceback
+        traceback.print_exc()
+
+        raise e
+    
+    if len(buffer) >= BATCH_SIZE:
+        pass
+
+
+
+
 
 def train2():
     print("TRAINING PPO SKIPPED")
     return
 
 
-def train():
+def train1():
     #print("TRAINING PPO")
     if len(buffer) >= BATCH_SIZE:
         pass
