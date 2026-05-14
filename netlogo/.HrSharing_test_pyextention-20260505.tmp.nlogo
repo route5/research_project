@@ -283,9 +283,10 @@ if not empty? RL-who-list [
     apply-action c action
     ask c [　set θt rl-θt　]
 
-
     ;; ===== 環境更新 =====
     scenario-func-fix c
+    show (word "after βt=" [βt] of c)
+    show (word "reward=" last-reward)
 
     ;; ===== 報酬 r_t =====
     set last-reward calc-reward c
@@ -3043,9 +3044,7 @@ NetLogo 6.3.0
     <enumeratedValueSet variable="distributionScenario">
       <value value="0"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="my-seed">
-      <value value="5"/>
-    </enumeratedValueSet>
+    <steppedValueSet variable="my-seed" first="0" step="1" last="99"/>
     <enumeratedValueSet variable="max-daily-overtime-minute">
       <value value="30"/>
     </enumeratedValueSet>
