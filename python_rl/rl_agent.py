@@ -23,6 +23,8 @@ EPOCHS = 10
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_PATH = os.path.join(BASE_DIR, "models", "model.pt")
 
+ACTIONS = [-2, -1, 0, 1, 2]
+
 # ==============================
 # ネットワーク
 # ==============================
@@ -101,23 +103,16 @@ def init_agent(model_path=MODEL_PATH, seed=None):
 # ==============================
 
 def policy_step(obs):
-    # print("policy_step start")
-    # print(obs)
-    # print(type(obs))
 
     obs = np.asarray(obs, dtype=np.float32)
     obs_t = torch.tensor(obs).unsqueeze(0)
-    
 
     with torch.no_grad():
         probs = policy(obs_t)
         dist = Categorical(probs)
         action = dist.sample()
 
-    # print(f"[py]Selected action: {action.item()}", flush=True)    
-    # print("before return")
-
-    return int(action.item())
+    return ACTIONS[action.item()]
 
 
 # ==============================
